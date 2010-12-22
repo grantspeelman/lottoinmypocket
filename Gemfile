@@ -19,7 +19,7 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # Bundle the extra gems:
 # gem 'bj'
-# gem 'nokogiri'
+
 # gem 'sqlite3-ruby', :require => 'sqlite3'
 # gem 'aws-s3', :require => 'aws/s3'
 
@@ -31,6 +31,8 @@ gem 'sqlite3-ruby', :require => 'sqlite3'
 # end
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 gem "steak", ">= 1.0.0.rc.1"
+gem 'nokogiri', "= 1.4.3.1"
 gem "capybara"
 gem "omniauth"
 gem "less"
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
