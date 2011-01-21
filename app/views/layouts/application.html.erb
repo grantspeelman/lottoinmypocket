@@ -1,14 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Grantspeelman</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <title>South Africa Lotto Helper</title>
+  <%= stylesheet_link_tag 'application.less', :rel => 'stylesheet/less' %>
+  <%= javascript_include_tag :defaults, 'less/less.min.js' %>
+  <% if Rails.env == 'development' %>
+    <script type="text/javascript" charset="utf-8">
+      less.env = "development";
+      less.watch();
+    </script>
+    <%= javascript_include_tag 'centage/centage.js' %>
+    <script type="text/javascript" charset="utf-8">
+        $(document).ready(function(){
+                grid(12); /* Your grid column number here, please */
+            });
+    </script>
+  <% end %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
+  <div id="wrap">
+    <div id="main-menu">
+      <ul>
+        <li><%= link_to 'Home', root_path, :class => 'active' %></li>
+        <li><a href="#">Lotto</a></li>
+        <li><a href="#">Lotto Plus</a></li>
+        <li><a href="#">Power Ball</a></li>
+      </ul>
+    </div>
+    <div id="header">
+      <h1><span>SA</span> Lotto Helper</h1>
+      <p>number generator</p>
+    </div>
+    
+    <div id="main-content">
+      <%= yield %>
+    </div>
+    <div id="footer">
+      <p>&copy;2007 All Rights Reserved. &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a> &nbsp;&bull;&nbsp; Icons by <a href="http://www.famfamfam.com/">FAMFAMFAM</a>.</p>
+    </div>
+  </div>
 
 </body>
 </html>

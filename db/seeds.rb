@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Mayor.create(:name => 'Daley', :city => cities.first)
+
+LottoDraw.import_results
+Ball.create_balls
+TwoBallCombo.create_combos
+ThreeBallCombo.create_combos

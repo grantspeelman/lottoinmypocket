@@ -1,11 +1,12 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.3'
+gem 'activerecord-jdbcsqlite3-adapter'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+#gem 'sqlite3-ruby', :require => 'sqlite3'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -34,5 +35,4 @@ gem "steak", ">= 1.0.0.rc.1"
 gem 'nokogiri', "= 1.4.3.1"
 gem "capybara"
 gem "omniauth"
-gem "less"
-gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
+gem 'admin_data', :group => [:development]
