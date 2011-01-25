@@ -24,8 +24,16 @@
       <ul>
         <li><%= link_to 'Home', root_path, :class => 'active' %></li>
         <li><a href="#">Lotto</a></li>
-        <li><a href="#">Lotto Plus</a></li>
         <li><a href="#">Power Ball</a></li>
+        <li>
+        <% if signed_in? %>
+          <%= link_to 'Logout', '/logout' %>
+        <% else %>
+          <%= link_to(image_tag("twitter_32.png"),
+                      '/auth/twitter',
+                      :title => 'Login with Twitter') %>
+        <% end %>
+        </li>
       </ul>
     </div>
     <div id="header">
@@ -34,6 +42,8 @@
     </div>
     
     <div id="main-content">
+      <div id="error"><%= flash[:error] %><div>
+      <div id="notice"><%= flash[:notice] %><div>
       <%= yield %>
     </div>
     <div id="footer">

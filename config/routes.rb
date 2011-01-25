@@ -2,6 +2,9 @@ Grantspeelman::Application.routes.draw do
   get "home/index"
 
   match '/auth/:provider/callback', :to => 'sessions#create'
+  match '/auth/failure', :to => 'sessions#failure'
+  
+  match '/logout', :to => 'sessions#destroy'
 
   root :to => "home#index"
 

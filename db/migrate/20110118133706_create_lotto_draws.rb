@@ -1,4 +1,5 @@
 class CreateLottoDraws < ActiveRecord::Migration
+  
   def self.up
     create_table 'lotto_draws' do |t|
       t.integer 'number', :null => false
