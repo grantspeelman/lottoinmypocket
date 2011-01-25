@@ -1,7 +1,7 @@
 <div class="lotto-result">
   <h2>Lotto</h2>
   <div>
-    <span><%= display_date @last_lotto_draw.date %></span>
+    <span><%= display_date(@last_lotto_draw.date) %></span>
   </div>
   <div>
     <span>Winning Numbers</span>
@@ -12,5 +12,22 @@
   <div>
     <span>Bonus Ball</span>
     <%= ball_span(@last_lotto_draw.bonus_ball) %>
+  </div>
+</div>
+
+<div class="lotto-result">
+  <h2>Lotto Plus</h2>
+  <div>
+    <span><%= display_date(@last_lotto_plus_draw.date) %></span>
+  </div>
+  <div>
+    <span>Winning Numbers</span>
+    <% @last_lotto_plus_draw.ball_numbers.each do |ball_number| %>
+      <%= ball_span(ball_number) %>
+    <% end %>
+  </div>
+  <div>
+    <span>Bonus Ball</span>
+    <%= ball_span(@last_lotto_plus_draw.bonus_ball) %>
   </div>
 </div>
