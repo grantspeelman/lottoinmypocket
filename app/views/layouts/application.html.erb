@@ -27,11 +27,9 @@
         <li><a href="#">Power Ball</a></li>
         <li>
         <% if signed_in? %>
-          <%= link_to 'Logout', '/logout' %>
+          <%= link_to current_user.name, '/me' %>
         <% else %>
-          <%= link_to(image_tag("twitter_32.png"),
-                      '/auth/twitter',
-                      :title => 'Login with Twitter') %>
+          <%= link_to 'Login', '/login' %>
         <% end %>
         </li>
       </ul>
@@ -42,8 +40,8 @@
     </div>
     
     <div id="main-content">
-      <div id="error"><%= flash[:error] %><div>
-      <div id="notice"><%= flash[:notice] %><div>
+      <div id="error"><%= flash[:error] %></div>
+      <div id="notice"><%= flash[:notice] %></div>
       <%= yield %>
     </div>
     <div id="footer">

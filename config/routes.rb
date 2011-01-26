@@ -3,9 +3,11 @@ Grantspeelman::Application.routes.draw do
 
   match '/auth/:provider/callback', :to => 'sessions#create'
   match '/auth/failure', :to => 'sessions#failure'
-  
+
+  match '/login', :to => 'sessions#new'
   match '/logout', :to => 'sessions#destroy'
 
+  match '/me', :to => 'home#me'
   root :to => "home#index"
 
   # The priority is based upon order of creation:

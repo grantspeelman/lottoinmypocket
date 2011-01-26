@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
   
   def failure
-    flash[:error] = "Authentication failed"
+    flash[:error] = params[:message] || "Authentication failed"
     redirect_to(root_path)
   end
   

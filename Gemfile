@@ -35,4 +35,5 @@ gem "steak", ">= 1.0.0.rc.1"
 gem 'nokogiri', "= 1.4.3.1"
 gem "capybara"
 gem "omniauth"
+gem "oa-openid"
 gem 'admin_data', :group => [:development]
