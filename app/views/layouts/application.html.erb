@@ -20,32 +20,56 @@
 </head>
 <body>
   <div id="wrap">
-    <div id="main-menu">
-      <ul>
-        <li><%= link_to 'Home', root_path, :class => 'active' %></li>
-        <li><a href="#">Lotto</a></li>
-        <li><a href="#">Power Ball</a></li>
-        <li>
-        <% if signed_in? %>
-          <%= link_to current_user.name, '/me' %>
-        <% else %>
-          <%= link_to 'Login', '/login' %>
-        <% end %>
-        </li>
-      </ul>
-    </div>
     <div id="header">
-      <h1><span>SA</span> Lotto Helper</h1>
-      <p>number generator</p>
+      <div>
+          <!-- .logo -->
+        <div class="logo">
+          <h1><%= link_to 'SA Lotto Helper', '/' %></h1>
+          <span>the number generator</span>
+        </div>
+          <!-- /.logo -->
+        <nav>
+          <ul>
+            <li <%= "class='active'" if current_page?(root_path) %> >
+                <%= link_to 'Home', root_path %>
+            </li>
+            <li <%= "class='active'" if current_page?('/lotto') %> >
+                <%= link_to 'Lotto', '/lotto' %>
+            </li>
+            <li <%= "class='active'" if current_page?('/powerball') %> >
+                <%= link_to 'Powerball', '/powerball' %>
+            </li>
+            
+            <% if signed_in? %>
+            <li <%= "class='active'" if current_page?('/me') %> >
+              <%= link_to 'Profile', '/me' %>
+            </li>
+              <li><%= link_to 'Logout', '/logout' %></li>
+            <% else %>
+              <li><%= link_to 'Login', '/login' %></li>
+            <% end %>
+            
+          </ul>
+        </nav>
+      </div>
     </div>
     
-    <div id="main-content">
-      <div id="error"><%= flash[:error] %></div>
-      <div id="notice"><%= flash[:notice] %></div>
+    <div id="content" class="<%= "#{params[:controller]}" %> <%= "#{params[:controller]}-#{params[:action]}" %>" >
+      <div class="error"><%= flash[:error] %></div>
+      <div class="notice"><%= flash[:notice] %></div>
       <%= yield %>
     </div>
     <div id="footer">
-      <p>&copy;2007 All Rights Reserved. &nbsp;&bull;&nbsp; Design by <a href="http://www.freecsstemplates.org/">Free CSS Templates</a> &nbsp;&bull;&nbsp; Icons by <a href="http://www.famfamfam.com/">FAMFAMFAM</a>.</p>
+      <div>
+          <nav>
+          <ul>
+            <li><%= link_to 'Home', root_path %>|</li>
+            <li><%= link_to 'Support', '/support' %>|</li>
+            <li><%= link_to 'Contacts', '/contacts' %></li>
+          </ul>
+        </nav>
+        <span>SA Lotto Helper</span> &nbsp;| &nbsp;<a href="/privacy_policy">Privacy policy</a>
+      </div>
     </div>
   </div>
 

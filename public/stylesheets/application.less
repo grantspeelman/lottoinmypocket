@@ -1,97 +1,130 @@
 @import "centage/init.less";
 
+/* Getting the new tags to behave */
+article, aside, audio, canvas, command, datalist, details, embed, figcaption, figure, footer, header, hgroup, keygen, meter, nav, output, progress, section, source, video{ display: block; }
+mark, rp, rt, ruby, summary, time{ display: inline; margin: 0; padding: 0; }
+
 body {
-    background: #F5F5F5 url(/images/img01.gif) repeat-x;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    color: #474848;
+  background: #e1e1e1;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  line-height: 1.125em;
+  color: #899a9d;
+  
 }
 
-#wrap {
-    // background: url(/images/img08.gif) repeat-x left bottom;
-}
-
-a {
-    background: url(/images/img03.gif) repeat-x left bottom;
-    text-decoration: none;
-    color: #1D62B3;
-}
-
-a:hover {
-    background: none;
-    color: #E43C15;
-}
-
-#main-menu {
-  height: 50px;
-  .col(12);
-  ul {
-    margin: 0px 0px 0px 10px;
-    padding: 0;
-    list-style: none;
-    line-height: normal;
-    li {
-      display: inline;
-    }
-    a {
-      float: left;
-      height: 37px;
-      padding: 13px 30px 0px 30px;
-      font-size: 1.4em;
-      font-weight: bold;
-      color: #FCFDDF;
-    }
-    a:hover {
-      background: #333333;
-      color: #FFFFFF;
-    }
-    a.active {
-      background: url(/images/img04.gif) repeat-x;
-    }
-  }
-}
-
+/* Header */
 #header {
-  height: 101px;
+  height: 128px;
+  background: url(/images/header-tail.gif) 0 0 repeat-x #101010;
+  border-bottom: 4px solid #ccc;
   .col(12);
-  h1 {
-    float: left;
-    padding: 20px 0 0 20px;
-    font-size: 3.2em;
-    font-weight: bold;
-    color: #E43C15;
+  .logo {
+    position: absolute;
+    left: 0;
+    top: 64px;
+//    background: url(/images/logo.gif) no-repeat 0 0;
+    padding: 0 0 0 53px;
+    h1 {
+      font-size: 42px;
+      line-height: 1em;
+      color: #dadada;
+      font-family: "Times New Roman", Times, serif;
+      font-weight: normal;
+      font-style: italic;
+      a {
+        color: #dadada;
+        text-decoration: none;
+      }
+    }
     span {
-      color:#67A0F5;
+      display: block;
+      font-size: 10px;
+      text-transform: uppercase;
+      margin-top: -10px;
+      color: #5a6466;
     }
   }
-  p {
-    float: left;
-    margin: 0;
-    padding: 42px 0 0 6px;
-    letter-spacing: 2px;
-    line-height: normal;
-    font: normal 1.4em Georgia, "Times New Roman", Times, serif;
+  nav {
+    position: absolute;
+    right: 5%;
+    top: 85px;
+    li {
+      float: left;
+      padding-left: 10px;
+      a {
+        float: left;
+        font-size: 19px;
+        line-height: 1.2em;
+        font-family: "Times New Roman", Times, serif;
+        color:#d6d6d6;
+        text-decoration: none;
+        font-style: italic;
+        padding: 10px 20px 20px 20px;
+        border-radius: 10px;
+        -moz-border-radius:10px;
+        -webkit-border-radius:10px;
+//        behavior:url(js/PIE.htc);
+        position: relative;
+      }
+      a:hover, a.active {
+        background:#ececec;
+        color:#1d1d1d;
+      }
+    }
+    li.active {
+      a {
+        background:#ececec;
+        color:#1d1d1d;
+      }
+    }
   }
 }
 
-#main-content {
-  .col(12);
-  min-height: 600px;
-  h1 {
-    font-size: 30px;
+/* Content */
+#content {
+  background: #ececec;
+}
+
+#content.home {
+  .col-nogut(12);
+  .result{
+    display: inline-block;
+    .sub-col(12,6);
   }
 }
 
 #footer {
-  .col(12);
-  height: 83px;
-  margin: 0 auto;
-  background: url(images/img10.gif) no-repeat;
-  p {
-    padding-top: 20px;
-    text-align: center;
-    font-size: .8em;
-    font-weight: bold;
+  border-top: 1px solid #c5c5c5;
+  color: #969696;
+  padding: 50px 0 50px 0;
+  div {
+    .margin-left(5);
+    .col(7);
+    font-size:.75em;
+    nav {
+      ul {
+        margin-left: -5px;
+        padding-bottom:.5em;
+        li {
+          display: inline;
+          a {
+            padding: 0 8px 0 5px;
+            color: #56514c;
+          }
+        }
+      }
+    }
+  }
+  a {
+    color:#969696;
+    text-decoration:none;
+  }
+  a:hover {
+    text-decoration:underline;
+  }
+  span {
+    color:#000;
   }
 }
 
