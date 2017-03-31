@@ -1,8 +1,10 @@
 source 'http://rubygems.org'
 
+ruby '1.9.3'
+
 gem 'rails', '3.0.3'
-gem 'activerecord-jdbcsqlite3-adapter', :group => [:development]
-gem 'activerecord-postgresql-adapter', :group => [:production]
+gem 'activerecord-postgresql-adapter'
+gem 'pg', '0.18.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -32,9 +34,7 @@ gem 'activerecord-postgresql-adapter', :group => [:production]
 #   gem 'webrat'
 # end
 gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
-gem "steak", ">= 1.0.0.rc.1"
-gem 'nokogiri', "= 1.4.3.1"
-gem "capybara"
+gem 'nokogiri', '1.6.8.1'
 gem "omniauth"
 gem "oa-openid"
 gem 'admin_data', :group => [:development]

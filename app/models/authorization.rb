@@ -7,12 +7,12 @@ class Authorization < ActiveRecord::Base
   after_destroy :destroy_user
   
   def self.find_from_hash(hash)
-    find_by_provider_and_uid(hash['provider'], hash['uid'])
+    find_by_provider_and_uid(hash.fetch('provider'), hash.fetch('uid'))
   end
 
   def self.create_from_hash(hash, user = nil)
-    user ||= User.create(:name => hash['user_info']['name'])
-    Authorization.create(:user => user, :uid => hash['uid'], :provider => hash['provider'])
+    user ||= User.create(:name => hash.fetch('info').fetch('name'))
+    Authorization.create(:user => user, :uid => hash.fetch('uid'), :provider => hash.fetch('provider'))
   end
   
   protected

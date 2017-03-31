@@ -39,8 +39,8 @@ def import_results(model,file)
   end
 end
   
-import_results(LottoPlusDraw,"#{Rails.root}\\db\\lotto_plus_draw_results.csv")
-import_results(LottoDraw,"#{Rails.root}\\db\\lotto_draw_results.csv")
+import_results(LottoPlusDraw,"#{Rails.root}/db/lotto_plus_draw_results.csv")
+import_results(LottoDraw,"#{Rails.root}/db/lotto_draw_results.csv")
 
 #Ball.create_balls
 #TwoBallCombo.create_combos
