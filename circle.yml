@@ -1,0 +1,17 @@
+# dependencies:
+#  post:
+#    - gem install rubocop bundler-audit brakeman --no-ri --no-rdoc
+
+# test:
+#  post:
+#    - rubocop -D
+#    - bundle exec rake assets:precompile
+#    - bundle-audit update && bundle-audit
+#    - brakeman -z
+
+deployment:
+  production:
+    branch: master
+    commands:
+      - git remote add dokku dokku@speelman.co.za:lottoinmypocket
+      - git push dokku master  
