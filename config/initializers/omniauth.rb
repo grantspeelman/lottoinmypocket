@@ -1,11 +1,11 @@
 # To change this template, choose Tools | Templates
 # and open the template in the editor.
 
-require 'openid/store/filesystem'
+# require 'openid/store/filesystem'
 
 
 Rails.application.config.middleware.use OmniAuth::Builder do
-  provider :developer unless Rails.env.production?
+  provider :developer # unless Rails.env.production?
 #  provider :twitter, 'H0PobKam07kkcP024wQdNQ', '2iQnsNUiX9CxdsLBOZXbQQ7hSSBrU0ZwyDpzMif7Qs'
 #   provider :facebook, '195846973763305', '65bc5413e0a214ef4ce402e207f117b0',
 #            :grant_type => 'client_credentials'
