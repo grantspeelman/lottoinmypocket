@@ -34,7 +34,7 @@ gem 'pg', '~> 0.18.4'
 # group :development, :test do
 #   gem 'webrat'
 # end
-gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
+gem "rspec-rails", "~> 2.0", :group => [:development, :test]
 gem 'nokogiri', '1.6.8.1'
 gem "omniauth"
 gem "oa-openid"
