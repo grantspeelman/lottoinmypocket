@@ -3,3 +3,5 @@ log/*.log
 tmp/**/*
 
 .idea
+.*.swp
+*.swp # ignore vim files

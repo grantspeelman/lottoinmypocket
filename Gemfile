@@ -12,8 +12,8 @@ gem 'pg', '~> 0.18.4'
 
 #gem 'sqlite3-ruby', :require => 'sqlite3'
 
-# Use unicorn as the web server
-# gem 'unicorn'
+# Use puma as the web server
+gem 'puma'
 
 # Deploy with Capistrano
 # gem 'capistrano'

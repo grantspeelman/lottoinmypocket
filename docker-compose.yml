@@ -11,7 +11,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
   web:
     build: .
-    command: script/rails server
+    command: bundle exec puma -C config/puma.rb
     volumes:
       - .:/usr/src/app
     ports:
